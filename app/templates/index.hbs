@@ -1,0 +1,53 @@
+<div class="row h-screen ">
+  <main role="main" class="col-12 ">
+    <div class="row">
+      <div class="col">
+      </div>
+
+      <div class="col-8 ">
+        <div class="mb-4 mt-4">
+          <h3>Expert advice</h3>
+          <p>Get answers to difficult questions</p>
+        </div>
+      </div>
+
+      <div class="col">
+      </div>
+    </div>
+
+    {{#list-filter
+      filter=(action 'filterByTitle')
+      filterByTag=(action 'filterByTag')
+      clearTags=(action 'clearTags')
+      nextPage=(action 'nextPage')
+      previousPage=(action 'previousPage')
+      page=page
+      tagFilter=tagFilter
+      as |filteredResults component|}}
+        {{#each filteredResults as |question|}}
+          {{#if question.slug}}
+            <div class="row">
+              <div class="col text-right">
+                <p>{{question.viewCounter}}</p>
+              </div>
+
+              <div class="col-8">
+                {{#link-to 'post' question.slug class = 'question-title'}}
+                  {{question.title}}
+                {{/link-to}}
+
+                <p>
+                  {{#each question.tagArray as |tag|}}
+                    <span class="question-tag badge badge-pill badge-light" {{action 'handleTagFilter' tag target=component}}>{{tag}}</span>
+                  {{/each}}
+                </p>
+              </div>
+
+              <div class="col">
+              </div>
+            </div>
+          {{/if}}
+        {{/each}}
+    {{/list-filter}}
+  </main>
+</div>
