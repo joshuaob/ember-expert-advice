@@ -8,5 +8,11 @@ export default Controller.extend({
                 _this.transitionToRoute('index')
             })
         },
+        submitPostForm(post) {
+            const _this = this
+            post.save().then(() => {
+                _this.transitionToRoute('index')
+            })
+        },
     },
 })
