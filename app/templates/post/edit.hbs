@@ -1,0 +1,26 @@
+<div class="row h-screen ">
+  <main role="main" class="col-12">
+    <div class="row">
+      <div class="col">
+      </div>
+
+      <div class="col-8">
+        <div class="mb-5 mt-4">
+          <h3>Expert advice</h3>
+          <p>Get answers to difficult questions</p>
+        </div>
+
+        <div class="mb-4 mt-5">
+          <h2>Ask a question</h2>
+        </div>
+
+        {{question-form question = model
+                        submitForm = (action 'submitQuestionForm')
+          }}
+      </div>
+
+      <div class="col">
+      </div>
+    </div>
+  </main>
+</div>

@@ -1,0 +1,79 @@
+<div class="row">
+  <div class="col">
+  </div>
+
+  <div class="col-8 ">
+    <form class="mb-3">
+      <div class="form-row">
+        <div class="col-md-8">
+          {{input value=value
+                  key-up=(action 'handleFilterEntry')
+                  class="form-control"
+                  placeholder="search"
+                  type="text"
+                }}
+        </div>
+
+        <div class="col-md-4 col-xs-12 text-md-right text-center">
+          {{#link-to 'ask' class = 'btn btn-primary mt-md-0 mb-md-0 mt-sm-3 mb-sm-3 mt-3 mb-3'}}
+            Ask a question
+          {{/link-to}}
+        </div>
+      </div>
+    </form>
+
+    {{#if tagFilter}}
+      <div>
+        <h4>Tags</h4>
+        <p>
+          <span class="badge badge-light">{{tagFilter}}</span>
+          <a href="" class="float-right" {{action 'clearTags'}}>Clear tags</a>
+        </p>
+      </div>
+    {{/if}}
+  </div>
+
+  <div class="col">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-2  text-right">
+    <p>views</p>
+  </div>
+
+  <div class="col-8 ">
+    <p>Questions</p>
+  </div>
+
+  <div class="col ">
+  </div>
+</div>
+
+{{yield results this}}
+
+<div class="row">
+  <div class="col">
+  </div>
+
+  <div class="col-8">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        {{#if prevLink}}
+          <li class="page-item"><a class="page-link" href="#" {{action 'previousPage'}}>Previous</a></li>
+        {{else}}
+          <li class="page-item disabled"><a class="page-link" href="#" {{action 'previousPage'}}>Previous</a></li>
+        {{/if}}
+
+        {{#if nextLink}}
+          <li class="page-item"><a class="page-link" href="#" {{action 'nextPage'}}>Next</a></li>
+        {{else}}
+          <li class="page-item disabled"><a class="page-link" href="#" {{action 'nextPage'}}>Next</a></li>
+        {{/if}}
+      </ul>
+    </nav>
+  </div>
+
+  <div class="col">
+  </div>
+</div>

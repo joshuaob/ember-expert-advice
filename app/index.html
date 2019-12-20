@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>EmberStarterProject</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Expert Advice</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    {{content-for "head"}}
+        {{content-for "head"}}
 
-    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/vendor.css">
-    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/ember-starter-project.css">
+        <link
+            integrity=""
+            rel="stylesheet"
+            href="{{rootURL}}assets/vendor.css"
+        />
+        <link
+            integrity=""
+            rel="stylesheet"
+            href="{{rootURL}}assets/ember-starter-project.css"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Courier+Prime&display=swap"
+            rel="stylesheet"
+        />
 
-    {{content-for "head-footer"}}
-  </head>
-  <body class="bg-grey-lighter h-screen font-sans">
-    {{content-for "body"}}
+        {{content-for "head-footer"}}
+    </head>
+    <body class="bg-grey-lighter h-screen font-sans">
+        {{content-for "body"}}
 
-    <script src="{{rootURL}}assets/vendor.js"></script>
-    <script src="{{rootURL}}assets/ember-starter-project.js"></script>
+        <script src="{{rootURL}}assets/vendor.js"></script>
+        <script src="{{rootURL}}assets/ember-starter-project.js"></script>
 
-    {{content-for "body-footer"}}
-  </body>
+        {{content-for "body-footer"}}
+    </body>
 </html>

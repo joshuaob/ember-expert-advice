@@ -1,0 +1,28 @@
+<form class="mb-3">
+  <div class="panel">
+    {{#each question.errors as |error|}}
+      <div class="alert alert-danger text-capitalize" role="alert">
+        {{error.attribute}} {{error.message}}
+      </div>
+    {{/each}}
+  </div>
+
+  <div class="form-group">
+    <label>Title</label>
+    {{input type="text" class="form-control" value=question.title}}
+  </div>
+
+  <div class="form-group">
+    <label>Description</label>
+    {{textarea name="name" rows="8" cols="80" class="form-control" value=question.description}}
+  </div>
+
+  <div class="form-group">
+    <label>Tags (separated by comma)</label>
+    {{input type="text" class="form-control" value=question.tags}}
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary" {{action "submitForm"}}>Post a question</button>
+  </div>
+</form>
